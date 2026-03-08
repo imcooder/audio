@@ -1,14 +1,14 @@
-# @cooder/audio
+# @imcooder/audio
 
 Audio processing utilities for Node.js — OGG/Opus, WAV, PCM conversion
 
 [![NPM version][npm-image]][npm-url]
 [![npm download][download-image]][download-url]
 
-[npm-image]: https://img.shields.io/npm/v/@cooder/audio.svg
-[npm-url]: https://npmjs.com/package/@cooder/audio
-[download-image]: https://img.shields.io/npm/dm/@cooder/audio.svg
-[download-url]: https://npmjs.com/package/@cooder/audio
+[npm-image]: https://img.shields.io/npm/v/@imcooder/audio.svg
+[npm-url]: https://npmjs.com/package/@imcooder/audio
+[download-image]: https://img.shields.io/npm/dm/@imcooder/audio.svg
+[download-url]: https://npmjs.com/package/@imcooder/audio
 
 ## Features
 
@@ -22,13 +22,13 @@ Audio processing utilities for Node.js — OGG/Opus, WAV, PCM conversion
 ## Installation
 
 ```bash
-npm install @cooder/audio
+npm install @imcooder/audio
 ```
 
 ## Usage
 
 ```typescript
-import { XOggOpusWriter, XWavEncoder, XPcmConverter } from '@cooder/audio';
+import { XOggOpusWriter, XWavEncoder, XPcmConverter } from '@imcooder/audio';
 ```
 
 ## API Reference
@@ -38,7 +38,7 @@ import { XOggOpusWriter, XWavEncoder, XPcmConverter } from '@cooder/audio';
 Build OGG/Opus files from raw Opus frames.
 
 ```typescript
-import { XOggOpusWriter } from '@cooder/audio';
+import { XOggOpusWriter } from '@imcooder/audio';
 
 const writer = new XOggOpusWriter({
   nSampleRate: 24000,
@@ -60,14 +60,14 @@ const bufOgg = writer.build(arrOpusFrames);
 | `nSampleRate` | `number` | `24000` | Input sample rate (informational) |
 | `nChannels` | `number` | `1` | Channel count (1=mono, 2=stereo) |
 | `nFrameSizeSamples` | `number` | `960` | Samples per frame at 48kHz (960=20ms) |
-| `strVendor` | `string` | `'@cooder/audio'` | Vendor string in OpusTags |
+| `strVendor` | `string` | `'@imcooder/audio'` | Vendor string in OpusTags |
 
 ### XOggOpusReader
 
 Parse OGG/Opus files and extract raw Opus packets.
 
 ```typescript
-import { XOggOpusReader } from '@cooder/audio';
+import { XOggOpusReader } from '@imcooder/audio';
 
 const reader = new XOggOpusReader(bufOgg);
 
@@ -96,7 +96,7 @@ XOggOpusReader.isWavFile(bufData);  // true/false
 Encode PCM audio data to WAV format.
 
 ```typescript
-import { XWavEncoder } from '@cooder/audio';
+import { XWavEncoder } from '@imcooder/audio';
 
 const encoder = new XWavEncoder({
   nSampleRate: 24000,
@@ -129,7 +129,7 @@ const bufWav2 = encoder.encodeFromBuffer(bufPcm);
 Parse WAV files and extract PCM data.
 
 ```typescript
-import { XWavDecoder } from '@cooder/audio';
+import { XWavDecoder } from '@imcooder/audio';
 
 const decoder = new XWavDecoder(bufWav);
 
@@ -151,7 +151,7 @@ const bufPcm = decoder.extractPcmData();
 Static utility class for PCM format conversion.
 
 ```typescript
-import { XPcmConverter } from '@cooder/audio';
+import { XPcmConverter } from '@imcooder/audio';
 
 // Float32 -> Int16
 const arrInt16 = XPcmConverter.float32ToInt16(new Float32Array([0.0, 0.5, -0.5, 1.0, -1.0]));

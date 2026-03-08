@@ -37,7 +37,7 @@ export class XOggOpusWriter {
     this._nSampleRate = options.nSampleRate ?? 24000;
     this._nChannels = options.nChannels ?? 1;
     this._nFrameSizeSamples = options.nFrameSizeSamples ?? 960;
-    this._strVendor = options.strVendor ?? '@cooder/audio';
+    this._strVendor = options.strVendor ?? '@imcooder/audio';
   }
 
   /**

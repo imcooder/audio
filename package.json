@@ -1,5 +1,5 @@
 {
-  "name": "@cooder/audio",
+  "name": "@imcooder/audio",
   "version": "0.0.1",
   "description": "Audio processing utilities for Node.js — OGG/Opus, WAV, PCM conversion",
   "license": "MIT",
