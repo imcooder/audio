@@ -1,0 +1,48 @@
+{
+  "name": "@cooder/audio",
+  "version": "0.0.1",
+  "description": "Audio processing utilities for Node.js — OGG/Opus, WAV, PCM conversion",
+  "license": "MIT",
+  "author": "Cooder",
+  "keywords": [
+    "audio",
+    "opus",
+    "ogg",
+    "wav",
+    "pcm",
+    "encode",
+    "decode"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "typescript": "^5.7.0"
+  }
+}
